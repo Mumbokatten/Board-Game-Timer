@@ -1,24 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="utf-8">
     <title>Board Game Timer</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
-        html, body, #root { 
-            height: 100%; 
-            margin: 0; 
-            padding: 0; 
-            overflow: hidden;
-        }
-        #root { 
-            display: flex; 
-            flex: 1; 
-        }
+        body { margin: 0; padding: 20px; font-family: Arial, sans-serif; }
+        #root { min-height: 100vh; }
     </style>
 </head>
 <body>
     <div id="root"></div>
-    <script src=".expo/static/js/web/index-65a8ad4610ec2fca1aee9681fac06679.js"></script>
+    <script>
+        // Inline the app to bypass CSP
+        window.addEventListener('load', function() {
+            fetch('.expo/static/js/web/index-65a8ad4610ec2fca1aee9681fac06679.js')
+                .then(response => response.text())
+                .then(code => {
+                    const script = document.createElement('script');
+                    script.textContent = code;
+                    document.head.appendChild(script);
+                })
+                .catch(err => {
+                    document.getElementById('root').innerHTML = 
+                        '<h1>Board Game Timer</h1><p>Loading failed. <a href="https://mumbokatten.netlify.app">Try Netlify version</a></p>';
+                });
+        });
+    </script>
 </body>
 </html>
