@@ -1,4 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, Alert } from 'react-native';
+
+//Code below
 
 const styles = StyleSheet.create({
   app: {
