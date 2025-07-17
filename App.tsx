@@ -600,9 +600,9 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     color: '#ffffff',
-    marginBottom: 8,      {gameStarted && (
-        <View styleimport React, { useState, useEffect, useRef } from 'react';
-import { View, Text, TextInput, TouchableOpacity, ScrollView, StyleSheet, Alert } from 'react-native';
+    marginBottom: 8,
+  },
+});
 
 // Try different Firebase import approach
 let firebase: any = null;
